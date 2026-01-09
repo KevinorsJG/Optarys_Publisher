@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsString, IsNumber, IsOptional, IsEnum, IsEmail, MinLength, IsNotEmpty } from 'class-validator';
 import { Type } from 'class-transformer';
+import { ChannelAds } from '@core/interfaces/channel-ads';
 
 export enum Currency {
   USD = 'USD',
@@ -27,7 +28,7 @@ export enum MeasureUnit {
   ACRES = 'AC'          // Acres
 }
 
-export class CreateEC24PublicationDto {
+export class CreateEC24PublicationDto  {
   // --- INFORMACIÓN BÁSICA ---
   @ApiProperty({
     description: 'Título llamativo de la propiedad',

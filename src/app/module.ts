@@ -7,6 +7,7 @@ import { CreatePostEC24Handler } from "./features/encuentra24/createPost/CreateP
 import { PostEC24RequestedHandler } from "./features/encuentra24/createPost/events/postRequested/PostEC24RequestedHandler";
 import { EC24Service } from "./features/encuentra24/createPost/services/ec24.service";
 import { CorrelationMiddleware } from "@core/middlewares";
+import { CreateAdsHandler } from "./features/CreateAdsHandler";
 
 @Module({
     imports: [
@@ -15,7 +16,7 @@ import { CorrelationMiddleware } from "@core/middlewares";
         InfrastructureModule,
         PresentationModule
     ],
-    providers: [EC24Service, CreatePostEC24Handler, PostEC24RequestedHandler]
+    providers: [EC24Service, CreatePostEC24Handler, PostEC24RequestedHandler, CreateAdsHandler]
 })
 export class AppModule implements NestModule {
     configure(consumer: MiddlewareConsumer) {
